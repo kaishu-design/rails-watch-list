@@ -1,20 +1,20 @@
- <div class="container">
+<div class="container">
   <h1><%= @list.name %></h1>
   <div class="cards">
-      <div class="card-product">
-        <div class="card-product-infos p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
-          <% @list.bookmarks.each do |bookmark| %>
-            <ul>
-            <li><%= bookmark.movie.title %></li>
-            <li><%= bookmark.movie.overview %></li>
-            <li><%= bookmark.movie.poster_url%></li>
-            <li><%= bookmark.movie.rating %></li>
-            </ul>
+    <div class="card-product">
+      <div class="card-product-infos">
+        <% @list.bookmarks.each do |bookmark| %>
+          <ul>
+          <img src="<%=   bookmark.movie.poster_url %>" />
+          <li><%= bookmark.movie.title %></li>
+          <li><%= bookmark.movie.overview %></li>
+          <li><%= bookmark.movie.rating %></li>
+          </ul>
           <p><%= link_to "delete bookmark", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you?"} %></p>
           <% end %>
           <p><%= link_to "back to lists", lists_path, class: "btn btn-primary mt-3" %></p>
             <%= link_to "add a movie", list_path, class: "btn btn-cancel" %>
-        </div>
       </div>
     </div>
+  </div>
 </div>
