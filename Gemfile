@@ -7,9 +7,16 @@ ruby "3.1.2"
 gem "rails", "~> 7.0.7"
 
 gem "bootstrap", "~> 5.2"
+
 gem "autoprefixer-rails"
+
 gem "font-awesome-sass", "~> 6.1"
+
 gem "simple_form"
+
+gem 'cloudinary', '~> 1.16.0'
+
+gem 'dotenv-rails', groups: [:development, :test]
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
